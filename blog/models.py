@@ -25,7 +25,7 @@ class Blog(models.Model):
     description = models.TextField()
     img = models.ImageField(upload_to='files/blog_img')
     content = RichTextField()
-    create_time: models.DateTimeField(editable=False, auto_now_add=True)
+    create_time = models.DateTimeField(auto_now_add=True, editable=False)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     auther = models.OneToOneField(UserProfile, on_delete=models.CASCADE)
 
