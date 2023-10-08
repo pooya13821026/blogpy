@@ -27,7 +27,7 @@ class Blog(models.Model):
     content = RichTextField()
     create_time = models.DateTimeField(auto_now_add=True, editable=False)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
-    auther = models.OneToOneField(UserProfile, on_delete=models.CASCADE)
+    auther = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.title
